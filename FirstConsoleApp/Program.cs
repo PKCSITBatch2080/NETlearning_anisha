@@ -20,3 +20,15 @@ m.Greet("Hi");
  var highest3 =m.GetMax(3.4,5.6,78.2,67.4); //using without array 
  var highest4 =m.GetMax(5.6,23.4); //using without array 
 Console.WriteLine(highest);
+
+
+
+Generics g= new();
+g.Display<string>("hiiiii you!!");
+g.Display<int>(786);
+
+
+
+Student anisha =new Student();
+Student anjali =new Student("anjali Tamanag", 22);
+var smritiRn= anjali.rollNumber;
