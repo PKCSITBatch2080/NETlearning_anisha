@@ -18,6 +18,14 @@ class Methods
     }
 
 
-    public double GetMax(double[] numbers) =>  numbers.Max();
+// Variable number of argument 
+    public double GetMax(params double[] numbers) =>  numbers.Max(); //params is used to  for sending the any comma variable
+
+    public (int, int) GetMinMax(params int[] numbers)
+    {
+        var smallest =numbers.Min();
+        var highest =numbers.Max();
+        return (smallest, highest);
+    }
   
 }
