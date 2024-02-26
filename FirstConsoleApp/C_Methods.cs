@@ -18,6 +18,10 @@ class Methods
     }
 
 
+
+// Type as arguments
+
+
 // Variable number of argument 
     public double GetMax(params double[] numbers) =>  numbers.Max(); //params is used to  for sending the any comma variable
 
