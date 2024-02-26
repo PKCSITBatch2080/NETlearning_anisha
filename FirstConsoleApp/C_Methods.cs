@@ -1,15 +1,14 @@
 using System;
+using System.Linq;  //namespace import gareko
 
 class Methods
 {
-    void Greet()
-    {
-        Console.WriteLine("Hey, there!");
-    }
 
-   public void Greet(string greeting){
-        Console.WriteLine($"{greeting}, there!"); //string interpolation
-    }
+    // Used arrow function
+    public void Greet()=>  Console.WriteLine("Hey, there!");
+  
+
+   public void Greet(string greeting)=> Console.WriteLine($"{greeting}, there!"); //string interpolation
 
     public  float CalculateBMI(float weightInkg, float heightInFt)
     {
@@ -18,5 +17,7 @@ class Methods
         return bmi;
     }
 
-    
+
+    public double GetMax(double[] numbers) =>  numbers.Max();
+  
 }
