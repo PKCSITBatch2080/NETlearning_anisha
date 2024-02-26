@@ -31,4 +31,7 @@ g.Display<int>(786);
 
 Student anisha =new Student();
 Student anjali =new Student("anjali Tamanag", 22);
-var smritiRn= anjali.rollNumber;
+// var smritiRn= anjali.rollNumber;
+
+anisha.RollNumber=5;
+anjali.RollNumber =12;

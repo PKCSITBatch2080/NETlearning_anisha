@@ -9,9 +9,6 @@ class Student {
     // parameterized constructor
         public Student(string n, byte rn){
         name=n;
-
-        if(rn>100)
-         return ;
         rollNumber=rn;
         }
 
@@ -29,7 +26,17 @@ class Student {
      }  
         }
     }
-    string address;
+    public string Address{get; set;} //Auto implemented property
 
     DateTime dob;
+
+
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Student Name: {name}");
+        Console.WriteLine($"Student RollNo: {name}");
+        Console.WriteLine($"Student Address: {name}");
+        Console.WriteLine($"Student DOB: {name}");
+    }
 }
