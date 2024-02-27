@@ -31,7 +31,17 @@ g.Display<int>(786);
 
 Student anisha =new Student();
 Student anjali =new Student("anjali Tamanag", 22);
-// var smritiRn= anjali.rollNumber;
+// var anjaliRn= anjali.rollNumber;
 
-anisha.RollNumber=5;
-anjali.RollNumber =12;
+anisha.RollNumber=5; //Not assigned 
+anjali.RollNumber =12; //assigned
+
+// anjali.Dob= DateTime.Now;
+
+var rekha =new CSStudent("Rekha Aryal",24, "Hospital Management System" );
+rekha.DisplayInfo();
+
+
+
+var sapana = new CyberSecurityStudent("Sapana Shrestha",11, "HMS", "RedHat");
+sapana.DisplayInfo();

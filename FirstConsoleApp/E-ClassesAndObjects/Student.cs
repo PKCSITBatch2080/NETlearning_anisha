@@ -1,6 +1,7 @@
 using System;
 
 class Student {
+    public string ProjectWork { get; set; }
     // Default constructor
     public Student(){
 
@@ -32,11 +33,11 @@ class Student {
 
 
 
-    public void DisplayInfo()
+    public  virtual void DisplayInfo()
     {
         Console.WriteLine($"Student Name: {name}");
-        Console.WriteLine($"Student RollNo: {name}");
-        Console.WriteLine($"Student Address: {name}");
-        Console.WriteLine($"Student DOB: {name}");
+        Console.WriteLine($"Student RollNo: {rollNumber}");
+        Console.WriteLine($"Student Address: {Address}");
+        Console.WriteLine($"Student DOB: {dob}");
     }
 }
