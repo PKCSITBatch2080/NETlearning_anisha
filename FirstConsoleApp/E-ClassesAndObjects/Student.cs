@@ -1,4 +1,5 @@
 using System;
+using System.Data.Common;
 
 class Student {
     public string ProjectWork { get; set; }
@@ -11,9 +12,17 @@ class Student {
         public Student(string n, byte rn){
         name=n;
         rollNumber=rn;
+  
         }
 
-    string name;
+
+   public Student(string n, byte rn, DateTime dob)
+    {
+        name = n;
+        RollNumber = rn;
+        Dob = dob;
+    }
+    public string name;
     byte rollNumber;
 
     public byte RollNumber{
@@ -29,7 +38,7 @@ class Student {
     }
     public string Address{get; set;} //Auto implemented property
 
-    DateTime dob;
+    public DateTime Dob{ get; }
 
 
 
@@ -38,6 +47,6 @@ class Student {
         Console.WriteLine($"Student Name: {name}");
         Console.WriteLine($"Student RollNo: {rollNumber}");
         Console.WriteLine($"Student Address: {Address}");
-        Console.WriteLine($"Student DOB: {dob}");
+        Console.WriteLine($"Student DOB: {Dob}");
     }
 }
