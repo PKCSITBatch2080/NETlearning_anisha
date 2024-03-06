@@ -20,4 +20,8 @@ class CyberSecurityStudent :CSStudent
         Console.WriteLine($"Certification: {SecurityCertification}");
         Console.WriteLine($"Certified Date: {CertifiedDate}");
     }
+
+       public static void Do()
+    {        
+    }
 }
