@@ -45,3 +45,12 @@ rekha.DisplayInfo();
 
 var sapana = new CyberSecurityStudent("Sapana Shrestha",11, "HMS", "RedHat");
 sapana.DisplayInfo();
+
+
+// CyberSecurityStudent.Do();
+
+//FDHandling.CreateFile();
+
+ParallelAndAsync pa = new();
+pa.ProcessNumbers();
+pa.ProcessNumbersParallel();
