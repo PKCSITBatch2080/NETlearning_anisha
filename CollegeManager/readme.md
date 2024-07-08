@@ -20,7 +20,7 @@ Razor View Engine
 
 ### Teacher (Name, Email, Subject, Qualification, Gender)
 
-### Program (Name, Affliation, Started)
+### Program (Name, Affiliation, Started)
 
 ### Semester (Title, )
 

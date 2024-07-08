@@ -14,10 +14,11 @@
     </tr>
   </thead>
   <tbody>
+    @{int i =1; }
   @foreach(var college in Model)
   {
     <tr>
-      <th scope="row">@college.Id</th>
+      <th scope="row">@(i++)</th>
       <td>@college.Name</td>
       <td>@college.Affiliation</td>
       <td>@college.StartedDate</td>
