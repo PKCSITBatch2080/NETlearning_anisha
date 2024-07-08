@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Mvc;
 public class ProgramController : Controller
 {
@@ -41,6 +42,25 @@ public class ProgramController : Controller
         // Do something on program
         CollegeManagerDb db = new();
         db.CollegePrograms.Update(program);
+        db.SaveChanges();
+        
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        CollegeManagerDb db = new();
+        var model = db.CollegePrograms.Find(id);
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(CollegeProgram program) // model binding
+    {
+        // Do something on program
+        CollegeManagerDb db = new();
+        db.CollegePrograms.Remove(program);
         db.SaveChanges();
         
         return RedirectToAction("Index");
