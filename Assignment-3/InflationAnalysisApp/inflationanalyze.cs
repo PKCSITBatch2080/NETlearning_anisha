@@ -1,63 +1,56 @@
+using System.Linq;
+using System.IO;
 class InflationAnalysis
 {
-    List <Inflation> AsianPacificInflation;
-
+    List<Inflation> AsianPacificInflation;
     public InflationAnalysis()
     {
-       AsianPacificInflation = new ();
+        AsianPacificInflation = new List<Inflation>();
     }
-
-     public void ReadInflationData(string filePath)
-{
-    using (var reader = new StreamReader(filePath))
+    public void ReadInflationData(string filePath)
     {
-        reader.ReadLine(); // Skip header row
-        string line;
-        while ((line = reader.ReadLine()) != null)
+        try
         {
-            string[] values = line.Split(',');
-            
-            // Ensure that values array has the expected number of elements
-            if (values.Length >= 6)
+            using (var reader = new StreamReader(filePath))
             {
-                string inflationRateString = values[2].Replace("%", "");
-                if (!string.IsNullOrWhiteSpace(inflationRateString))
+                reader.ReadLine(); // Skip the header line
+
+                while (!reader.EndOfStream)
                 {
-                    double inflationRate;
-                    if (double.TryParse(inflationRateString, out inflationRate))
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(',');
+
+                    if (
+                        int.TryParse(values[1], out int year)
+                        && double.TryParse(values[2].Replace("%", ""), out double inflationRate)
+                    )
                     {
                         Inflation inflationData = new Inflation
                         {
                             RegionalMember = values[0],
-                            Year = int.Parse(values[1]),
+                            Year = year,
                             InflationRate = inflationRate,
                             UnitOfMeasurement = values[3],
                             Subregion = values[4],
                             CountryCode = values[5]
                         };
+
                         AsianPacificInflation.Add(inflationData);
                     }
                     else
                     {
-                        // Handle invalid inflation rate
-                        Console.WriteLine($"Invalid inflation rate: {inflationRateString}");
+                        Console.WriteLine(
+                            $"Error parsing data in line: {line}. Skipping this line."
+                        );
                     }
                 }
-                else
-                {
-                    // Handle missing inflation rate
-                    Console.WriteLine("Missing inflation rate");
-                }
-            }
-            else
-            {
-                // Handle invalid or missing data
-                Console.WriteLine($"Invalid data: {line}");
             }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred while reading the CSV file: {ex.Message}");
+        }
     }
-}
-
 
     public List<Inflation> GetInflationRatesForYear(int year)
     {
@@ -96,5 +89,5 @@ class InflationAnalysis
             .Take(3)
             .ToList();
     }
-
 }
+

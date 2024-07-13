@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-class Program
+﻿class Program
 {
-    static void Main()
+    public static void Main()
     {
-        string filePath =@"D:\GIT\NETlearning_anisha\Assignment-3\Inflation.csv"
+        string filePath =@"D:\GIT\NETlearning_anisha\Assignment-3\InflationAnalysisApp\Inflation.csv";
         InflationAnalysis analysis = new InflationAnalysis();
         analysis.ReadInflationData(filePath);
 
