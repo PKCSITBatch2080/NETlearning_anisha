@@ -14,14 +14,11 @@ Web App => URLs (Routes) => Controller => Models (Optionally) => Render View
 
 Razor View Engine
 
+
 # College Manager
 
 ### Student (Name, Address, Email, Dob, Gender)
-
 ### Teacher (Name, Email, Subject, Qualification, Gender)
-
-### Program (Name, Affiliation, Started)
-
+### Program (Name, Affliation, Started)
 ### Semester (Title, )
-
 ### Subject (Name, Description, TextBook, Syllabus)
